@@ -1,0 +1,49 @@
+
+**************Angular***************
+npm install -g @angular/cli
+ng new my-dream-app
+cd my-dream-app
+ng serve
+
+ng generate component members-detail
+
+
+**************Django*****************
+Criar uma pasta que vai conter o projeto python
+Ex: recuperaçãodedividas
+django-admin startproject rdd
+
+//Criar projeto
+django-admin startproject front
+//criação do core
+python manage.py startapp core
+//Instalação da virtual machine python
+python -m venv venv   
+//Vá para venv/Scripts e execute
+./activate
+//Instalação do Django
+pip install django 
+//Instalação do django rest
+pip install djangorestframework
+//Create Super-User
+pip install django-createsuperuser
+python manage.py createsuperuser
+
+//Como acessar a administração
+http://127.0.0.1:8000/admin/
+
+//Run
+python manage.py runserver 
+//Criação do banco de dados
+python manage.py migrate
+
+//Instalar cors-header
+python -m pip install django-cors-headers
+
+//Criação do banco quando faz o modelo
+python manage.py makemigrations
+python manage.py migrate
+
+//Como acessar a administração
+
+
