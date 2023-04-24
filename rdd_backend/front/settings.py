@@ -37,10 +37,24 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'core',
     'rest_framework',
     "corsheaders",
+    'rest_framework.authtoken',
+    'credor',
+    'devedor',
+    'endereco',
+    'django_filters',
+    
 ]
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+  'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.authentication.SessionAuthentication',
+    ], 'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend']
+}
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
