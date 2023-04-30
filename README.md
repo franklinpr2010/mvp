@@ -1,6 +1,6 @@
 
 # Recuperação de dívidas
-Este pequeno projeto faz parte do material diático da Disciplina Desenvolvimento Full Stack Básico da Puc Rio, a idéia inicial do projeto como escopo era realizar cadastro de credores e dívidas relacionadas ao devedor, a amortização dessa dívida e a negativação do devedor, como esse projeto destina-se somente a apresentação inicial nesse primeiro momento faz parte do deadline apenas o cadatro de credores. Esse projeto divide-se em dois módulos descritos abaixo, um front-end e outro back-end.
+Este pequeno projeto é parte do material didático da disciplina Desenvolvimento Full Stack Básico da PUC-Rio. A ideia inicial do projeto como escopo era realizar o cadastro de credores, dívidas relacionadas ao devedor, a amortização dessa dívida e a negativação do devedor. No entanto, como esse projeto destina-se somente à apresentação inicial neste primeiro momento, o prazo de entrega contempla apenas o cadastro de credores. O projeto é dividido em dois módulos, um front-end e outro back-end.
 
 # rdd_frontend
 Projeto construído em angular 15.2.7
@@ -47,6 +47,24 @@ Projeto back-end construído em python com o framework django, foram usados algu
 <br /> python manage.py runserver
 
 Acesse: http://localhost:8000
+
+8 - A collection para ser importada no postman encontra-se nesse link.
+<br />https://github.com/franklinpr2010/mvp/blob/main/rdd.postman_collection
+
+9 - É necessário inicialmente gerar um token no endpoint com o request map abaixo:
+<br />/rdd-user-login
+![image](https://user-images.githubusercontent.com/2296319/235371464-0bfff79c-348e-4a91-b816-2f603cf66ca4.png)
+
+10- Após isso colocar o Token na aba Headers do postman
+![image](https://user-images.githubusercontent.com/2296319/235371538-67354448-d021-4507-8392-5622b615dbd0.png)
+
+11 - Para executar a documentação da api do Rdd é necessário acessar o seguinte endereço:
+<br />http://127.0.0.1:8000/swagger/
+<br />http://127.0.0.1:8000/docs/
+
+
+
+
 
 
 
