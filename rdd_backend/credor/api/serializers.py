@@ -23,11 +23,14 @@ class CredorSerializer(serializers.ModelSerializer):
         print('endereco', end)
         credor = Credor.objects.create(**validated_data) 
         credor.endereco = end
-        
         #credor.usuario = usuario
         credor.save()
         return credor
-        
+    
+    def update(self, instance,validated_data):
+        credor =  validated_data
+        return credor
+    
 
 class CredorSimpleSerializer(serializers.ModelSerializer):
     class Meta:

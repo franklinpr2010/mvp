@@ -16,7 +16,27 @@ class CredorViewSet(viewsets.ModelViewSet):
     authentication_classes = [TokenAuthentication,]
     permission_classes = [IsAuthenticated]
     pagination_class = CustomPagination
-
+    
+    
+    def update(self, request, *args, **kwargs):
+        print('teste ',self, request, args, kwargs)
+        credor = self.get_object()
+        data = request.data
+        endData = data['endereco']
+        credorOb = Credor.objects.get(id = data['id'])
+        enderecoOb = Endereco.objects.get(id = data['id'])
+        credorOb.nomeCredor = data['nomeCredor']
+        credorOb.dataRegistro = data['dataRegistro']
+        credorOb.email = data['email']
+        credorOb.cnpjCpf = data['cnpjCpf']
+        enderecoOb.complemento = endData['complemento']
+        enderecoOb.bairro = endData['bairro']
+        enderecoOb.numero = endData['numero']
+        enderecoOb.estado = endData['estado']
+        enderecoOb.linha = endData['linha']
+        enderecoOb.cep = endData['cep']
+        credorOb.save()
+        return super(CredorViewSet, self).update(request, *args, **kwargs)
 
     def create(self, request, *args, **kwargs):
         print('teste', self, request, args, kwargs)

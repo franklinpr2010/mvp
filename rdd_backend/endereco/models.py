@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 
 class Endereco(models.Model): 
+    id = models.AutoField(primary_key=True)
     bairro = models.CharField(max_length=100)
     numero = models.CharField(max_length=5)
     estado = models.CharField(max_length=2, null=True, blank=True)
