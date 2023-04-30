@@ -4,9 +4,9 @@ from endereco.models import Endereco
 class EnderecoSerializer(serializers.ModelSerializer):
     class Meta:
         model = Endereco
-        fields = ['endereco', 'numero', 'bairro']
+        fields = ('linha', 'numero', 'bairro', 'estado', 'cep', 'complemento')
 
 class EnderecoSimpleSerializer(serializers.ModelSerializer):
     class Meta:
         model = Endereco
-        fields = ['endereco', 'numero', 'bairro']
+        fields = ['linha', 'numero', 'bairro']

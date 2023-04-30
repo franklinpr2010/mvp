@@ -1,0 +1,31 @@
+<aside class="main-sidebar">
+    <section class="sidebar">
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-edit"></i> <span>Credores</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a [routerLink]="['/credor-list']"><i class="fa fa-circle-o"></i>Lista</a></li>
+            <li><a [routerLink]="['/credor-new']"><i class="fa fa-circle-o"></i>Cadastro</a></li>
+          </ul>
+        </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-edit"></i> <span>Devedores</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right"></i>
+            </span>
+          </a>
+          <ul class="treeview-menu">
+            <li><a [routerLink]="['/devedor-list']"><i class="fa fa-circle-o"></i> List</a></li>
+            <li><a [routerLink]="['/devedor-new']"><i class="fa fa-circle-o"></i> New Devedor</a></li>
+          </ul>
+        </li>
+      
+      </ul>
+    </section>
+  </aside>

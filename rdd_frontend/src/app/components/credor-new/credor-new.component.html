@@ -1,0 +1,139 @@
+<div class="col-md-12" style="margin-left:0%">
+    <div>
+      <form #form="ngForm" (ngSubmit)="register()" novalidate>
+        <div [ngClass]="classCss" role="alert" *ngIf="message">
+          <strong>{{ message.text }}</strong>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-sm-6" [ngClass]="getFormGroupClass(cnpjCpf.invalid || false ,cnpjCpf.dirty || false)">
+            <label for="inputcnpjCpf" class="control-label">CNPJ/CPF</label>
+              <input type="text" maxlength="14" mask="000.000.000-00||00.000.000/0000-00"
+                      [(ngModel)]="credor.cnpjCpf"
+                      name="cnpjCpf" 
+                      class="form-control" 
+                      id="inputcnpjCpf" 
+                      placeholder="CNPJ/CPF"
+                      #cnpjCpf="ngModel" 
+                      required>
+              <span class="help-block" *ngIf="cnpjCpf.invalid && cnpjCpf.dirty">CPF/CNPJ is required</span>
+          </div>
+          <div class="form-group col-sm-6" [ngClass]="getFormGroupClass(nomeCredor.invalid || false ,nomeCredor.dirty || false)">
+            <label for="inputnomeCredor">Nome</label>
+
+              <input type="text" maxlength="100"
+                      [(ngModel)]="credor.nomeCredor"
+                      name="nomeCredor" 
+                      class="form-control" 
+                      id="inputnomeCredor" 
+                      placeholder="Nome do credor"
+                      #nomeCredor="ngModel" 
+                      required>
+              <span class="help-block" *ngIf="nomeCredor.invalid && nomeCredor.dirty">Nome is required</span>
+
+          </div>
+          <div class="form-group col-sm-12" [ngClass]="getFormGroupClass(email.invalid || false,email.dirty || false)">
+            <label for="inputemail">Email</label>
+              <input type="email" maxlength="100"
+                      [(ngModel)]="credor.email"
+                      name="email" 
+                      class="form-control" 
+                      id="inputemail" 
+                      placeholder="Nome do credor"
+                      #email="ngModel" 
+                      required>
+              <span class="help-block" *ngIf="email.invalid && email.dirty">Email is required</span>
+          </div>
+          <div class="form-group col-md-6" [ngClass]="getFormGroupClass(linha.invalid || false,linha.dirty || false)">
+            <label for="inputendereco">Endereço</label>
+              <input type="text" maxlength="200"
+                      [(ngModel)]="credor.endereco.linha"
+                      name="endereco" 
+                      class="form-control" 
+                      id="inputendereco" 
+                      placeholder="Endereço"
+                      #linha="ngModel" 
+                      required>
+              <span class="help-block" *ngIf="linha.invalid && linha.dirty">Endereço is required</span>
+          </div>
+          <div class="form-group col-md-6" [ngClass]="getFormGroupClass(bairro.invalid || false,bairro.touched || false)">
+            <label for="inputbairro">Bairro</label>
+              <input type="text" maxlength="100"
+                      [(ngModel)]="credor.endereco.bairro"
+                      name="bairro" 
+                      class="form-control" 
+                      id="inputbairro" 
+                      placeholder="Bairro"
+                      #bairro="ngModel" 
+                      required>
+              <span class="help-block" *ngIf="bairro.invalid && bairro.dirty">Bairro is required</span>
+          </div>
+          <div class="form-group col-md-6" [ngClass]="getFormGroupClass(numero.invalid || false,numero.touched || false)">
+            <label for="inputnumero">Número</label>
+              <input type="text" maxlength="5"
+                      [(ngModel)]="credor.endereco.numero"
+                      name="numero" 
+                      class="form-control" 
+                      id="inputnumero" 
+                      placeholder="Número"
+                      #numero="ngModel" 
+                      required>
+              <span class="help-block" *ngIf="numero.invalid && numero.dirty">Número is required</span>
+          </div>
+          <div class="form-group col-md-6" [ngClass]="getFormGroupClass(estado.invalid || false,estado.touched || false)">
+            <label for="inputestado">Estado</label>
+              <input type="text" maxlength="2"
+                      [(ngModel)]="credor.endereco.estado"
+                      name="estado" 
+                      class="form-control" 
+                      id="inputestado" 
+                      placeholder="Estado"
+                      #estado="ngModel" 
+                      required>
+              <span class="help-block" *ngIf="estado.invalid && estado.touched">Estado is required</span>
+          </div>
+          <div class="form-group col-md-6" [ngClass]="getFormGroupClass(cep.invalid || false,cep.dirty || false)">
+            <label for="inputcep">Cep</label>
+              <input type="text" maxlength="9" mask="00000-000"
+                      [(ngModel)]="credor.endereco.cep"
+                      name="cep" 
+                      class="form-control" 
+                      id="inputcep" 
+                      placeholder="Cep"
+                      #cep="ngModel" 
+                      required>
+              <span class="help-block" *ngIf="(cep.invalid || false) && (cep.dirty || false)">Cep is required</span>
+          </div>
+          <div class="form-group col-md-6" [ngClass]="getFormGroupClass((complemento.invalid || false),(complemento.touched || false))">
+            <label for="inputcomplemento">Complemento</label>
+              <input type="text" maxlength="100"
+                      [(ngModel)]="credor.endereco.complemento"
+                      name="complemento" 
+                      class="form-control" 
+                      id="inputcomplemento" 
+                      placeholder="Complemento"
+                      #complemento="ngModel" 
+                      required>
+              <span class="help-block" *ngIf="(complemento.invalid || false) && (complemento.touched || false)">Complemento is required</span>
+          </div>
+         <!-- <div [ngClass]="getFormGroupClass(description.invalid,description.dirty)">
+            <label for="inputDescription" class="col-sm-2 control-label">Description</label>
+            <div class="col-sm-10">
+              <textarea [(ngModel)]="ticket.description"
+                      name="description" 
+                      rows="3"
+                      class="form-control" 
+                      id="inputDescription" 
+                      placeholder="Description..."
+                      #description="ngModel" 
+                      required>
+              </textarea>        
+              <span class="help-block" *ngIf="description.invalid && description.dirty">Description is required</span>
+            </div>
+          </div>  -->    
+        </div>
+        <div class="box-footer">
+          <button type="submit" [disabled]="!form.valid" class="btn btn-info pull-right">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>

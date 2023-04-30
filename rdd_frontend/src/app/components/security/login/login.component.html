@@ -1,0 +1,44 @@
+<div class="col-md-4" style="margin-left:20%">
+    <div class="box box-info">
+      <div class="box-header with-border">
+        <h3 class="box-title">Recuperação de Dívidas</h3>
+      </div>
+      <form class="form-horizontal" #form="ngForm" (ngSubmit)="login()" novalidate>
+        <div class="alert alert-error" role="alert" *ngIf="message">
+          <strong>Usuário ou senha inválido</strong>
+        </div>
+        <div class="box-body">
+          <div [ngClass]="getFormGroupClass(username.invalid || false, username.dirty || false)">
+            <label for="inputUsername" class="col-sm-2 control-label">Usuário</label>
+            <div class="col-sm-10">
+              <input 
+                     [(ngModel)]="user.username"
+                     name="username"
+                     class="form-control" 
+                     #username="ngModel"
+                     placeholder="Usuário">
+              <span class="help-block" *ngIf="username.invalid  && username.dirty">Usuário está inválido </span>
+            </div>
+          </div>
+          <div [ngClass]="getFormGroupClass(password.invalid || false ,password.dirty || false)">
+            <label for="inputPassword" class="col-sm-2 control-label">Password</label>
+            <div class="col-sm-10">
+              <input type="password" 
+                     [(ngModel)]="user.password"
+                     name="password" 
+                     class="form-control" 
+                     id="inputPassword" 
+                     placeholder="Senha"
+                     #password="ngModel" 
+                     required>
+              <span class="help-block" *ngIf="password.invalid && password.dirty">Password is required</span>
+            </div>
+          </div>
+        </div>
+        <div class="box-footer">
+          <button type="submit" (click)="cancelLogin()" class="btn btn-default">Cancel</button>
+          <button type="submit" [disabled]="!form.valid" class="btn btn-info pull-right">Login</button>
+        </div>
+      </form>
+    </div>
+    </div>

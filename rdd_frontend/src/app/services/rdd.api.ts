@@ -1,0 +1,1 @@
+export const RDD_API: string = 'http://localhost:8000'

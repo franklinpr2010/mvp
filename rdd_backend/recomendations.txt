@@ -1,11 +1,8 @@
 
 **************Angular***************
+npm install
 npm install -g @angular/cli
-ng new my-dream-app
-cd my-dream-app
 ng serve
-
-ng generate component members-detail
 
 
 **************Django*****************
@@ -45,5 +42,12 @@ python manage.py makemigrations
 python manage.py migrate
 
 //Como acessar a administração
+
+#Swagger
+http://127.0.0.1:8000/swagger/
+
+#Docs
+http://127.0.0.1:8000/docs/
+
 
 
