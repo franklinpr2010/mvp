@@ -1,0 +1,423 @@
+{
+	"info": {
+		"_postman_id": "d1ec8467-63fd-485a-823e-46ddf82faab1",
+		"name": "PucApiAula01",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2874635"
+	},
+	"item": [
+		{
+			"name": "get-credores",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 6742dd0f2e84473a3b5d3f2f3ab2d1ead5d215ae",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/rdd/v1/credores",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"rdd",
+						"v1",
+						"credores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get-devedores",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 9b12a25ed773f52a0f0a3bbce9edfc29dca78dd6",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Denis magalhães\",\r\n    \"cnpjCpf\": \"90340498777\",\r\n    \"email\": \"franklinpr2010@gmail.com\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/rdd/v1/devedores/?limit=5&offset20",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"rdd",
+						"v1",
+						"devedores",
+						""
+					],
+					"query": [
+						{
+							"key": "limit",
+							"value": "5"
+						},
+						{
+							"key": "offset20",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-credores",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Token 6742dd0f2e84473a3b5d3f2f3ab2d1ead5d215ae",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nomeCredor\": \"sulamerica2\",\r\n    \"cnpjCpf\": \"9034040795\",\r\n    \"email\": \"franklinpr2010@gmail.com\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/rdd/v1/credores/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"rdd",
+						"v1",
+						"credores",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add-devedor",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Token 6742dd0f2e84473a3b5d3f2f3ab2d1ead5d215ae",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n        \"nome\": \"FRANKLIN PEIXOTO RO2222\",\r\n        \"cnpjCpf\": \"233213123233\",\r\n        \"email\": \"franklinpr2011@gmail.com\",\r\n\r\n        \"cred\": {\r\n            \"nomeCredor\": \"teste4\",\r\n            \"cnpjCpf\": \"21414321432\",\r\n            \"email\": \"franklinpr2010@gmail.com\"\r\n        },\r\n        \"endereco\": {\r\n            \"endereco\": \"Av senador Dantas 114\",\r\n            \"numero\": \"12\",\r\n            \"bairro\": \"Centro\"\r\n        },\r\n        \"numeroContrato\": \"3213231\",\r\n        \"valorDivida\": \"340\"\r\n    }\r\n\r\n"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/rdd/v1/devedores/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"rdd",
+						"v1",
+						"devedores",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-credor",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Token 6742dd0f2e84473a3b5d3f2f3ab2d1ead5d215ae",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"1\",\r\n    \"cnpjCpf\": \"09034040796\",\r\n    \"email\": \"franklinpr2010@gmail.com\",\r\n    \"nomeCredor\":\"franklin peixoto roza\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/rdd/v1/credores/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"rdd",
+						"v1",
+						"credores",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update-devedor",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Token 6742dd0f2e84473a3b5d3f2f3ab2d1ead5d215ae",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"nome\": \"Denis magalhães da silva\",\r\n    \"cnpjCpf\": \"90340498777\",\r\n    \"email\": \"franklinpr2010@gmail.com\"\r\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/rdd/v1/devedores/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"rdd",
+						"v1",
+						"devedores",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-credor",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 6742dd0f2e84473a3b5d3f2f3ab2d1ead5d215ae",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/rdd/v1/credores/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"rdd",
+						"v1",
+						"credores",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete-devedor",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/rdd/v1/devedores/1/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"rdd",
+						"v1",
+						"devedores",
+						"1",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "filter-devedor",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Token 6742dd0f2e84473a3b5d3f2f3ab2d1ead5d215ae",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/rdd/v1/devedores/?nome=Denis magalhães da silva",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"rdd",
+						"v1",
+						"devedores",
+						""
+					],
+					"query": [
+						{
+							"key": "nome",
+							"value": "Denis magalhães da silva"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "authenticaton",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "username",
+							"value": "api",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "api2018!",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/rdd-token-auth",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"rdd-token-auth"
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "admin",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login-as",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "admin",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "admin",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/rdd-user-login/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"rdd-user-login",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
